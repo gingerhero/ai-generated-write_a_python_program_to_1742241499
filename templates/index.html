@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sum Calculator</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="num1">First Number:</label>
+                <input type="text" id="num1" name="num1" required>
+            </div>
+            <div class="form-group">
+                <label for="num2">Second Number:</label>
+                <input type="text" id="num2" name="num2" required>
+            </div>
+            <button type="submit">Calculate Sum</button>
+        </form>
+        {% if result is not none %}
+        <div class="result">
+            <h2>Result: {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
